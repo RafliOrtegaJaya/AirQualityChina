@@ -24,7 +24,3 @@ import seaborn as sns
 ```
 streamlit run dashboard.py
 ```
-
-### Demo for streamlit
-This is the demonstration of my web-app using Streamlit
-[Air Quality]()
