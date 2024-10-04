@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-data_kualitas_udara = pd.read_url("https://raw.githubusercontent.com/RafliOrtegaJaya/AirQualityChina/refs/heads/main/dashboard/data_kualitas_udara.csv")
+data_kualitas_udara = pd.read_csv("https://raw.githubusercontent.com/RafliOrtegaJaya/AirQualityChina/refs/heads/main/dashboard/data_kualitas_udara.csv")
 
 
 st.title('Air Quality in China :sparkles:')
