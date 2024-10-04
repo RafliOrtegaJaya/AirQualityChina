@@ -248,3 +248,173 @@ plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=la
 plt.grid(axis='y')
 
 st.pyplot(plt)
+
+## Klasifikasi PM10
+st.subheader('Klasifikasi PM10')
+
+data_kualitas_udara = data_kualitas_udara
+data_pm10 = data_kualitas_udara[['station', 'PM10', 'year']].dropna()
+
+bins = [0, 51, 101, 151, 201, 301, 500]
+labels = [
+    'Sangat baik', 
+    'Baik',
+    'Sedikit tercemar',
+    'Cukup tercemar',
+    'Sangat tercemar',
+    'Tercemar parah'
+]
+
+years = data_pm10['year'].unique()
+selected_year = st.selectbox("Pilih Tahun:", years)
+yearly_data = data_pm10[data_pm10['year'] == selected_year]
+yearly_data['AQI_Class'] = pd.cut(yearly_data['PM10'], bins=bins, labels=labels)
+
+binned_counts = yearly_data.groupby(['station', 'AQI_Class']).size().unstack(fill_value=0)
+
+plt.figure(figsize=(12, 8))
+binned_counts.plot(kind='bar', stacked=True, colormap='coolwarm')
+plt.title("Distribusi Kualitas Udara Parameter PM10 berdasarkan AQI di Setiap Stasiun {}".format(selected_year))
+plt.xlabel('Stasiun')
+plt.ylabel('Jumlah Data')
+plt.xticks(rotation=45)
+plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=labels)
+plt.grid(axis='y')
+
+st.pyplot(plt)
+
+## Klasifikasi SO2
+st.subheader('Klasifikasi SO2')
+
+data_kualitas_udara = data_kualitas_udara
+data_so2 = data_kualitas_udara[['station', 'SO2', 'year']].dropna()
+
+bins = [0, 51, 101, 151, 201, 301, 500]
+labels = [
+    'Sangat baik', 
+    'Baik',
+    'Sedikit tercemar',
+    'Cukup tercemar',
+    'Sangat tercemar',
+    'Tercemar parah'
+]
+
+years = data_so2['year'].unique()
+selected_year = st.selectbox("Pilih Tahun:", years)
+yearly_data = data_so2[data_so2['year'] == selected_year]
+yearly_data['AQI_Class'] = pd.cut(yearly_data['SO2'], bins=bins, labels=labels)
+
+binned_counts = yearly_data.groupby(['station', 'AQI_Class']).size().unstack(fill_value=0)
+
+plt.figure(figsize=(12, 8))
+binned_counts.plot(kind='bar', stacked=True, colormap='coolwarm')
+plt.title("Distribusi Kualitas Udara Parameter SO2 berdasarkan AQI di Setiap Stasiun {}".format(selected_year))
+plt.xlabel('Stasiun')
+plt.ylabel('Jumlah Data')
+plt.xticks(rotation=45)
+plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=labels)
+plt.grid(axis='y')
+
+st.pyplot(plt)
+
+## Klasifikasi NO2
+st.subheader('Klasifikasi NO2')
+
+data_kualitas_udara = data_kualitas_udara
+data_no2 = data_kualitas_udara[['station', 'NO2', 'year']].dropna()
+
+bins = [0, 51, 101, 151, 201, 301, 500]
+labels = [
+    'Sangat baik', 
+    'Baik',
+    'Sedikit tercemar',
+    'Cukup tercemar',
+    'Sangat tercemar',
+    'Tercemar parah'
+]
+
+years = data_no2['year'].unique()
+selected_year = st.selectbox("Pilih Tahun:", years)
+yearly_data = data_no2[data_no2['year'] == selected_year]
+yearly_data['AQI_Class'] = pd.cut(yearly_data['NO2'], bins=bins, labels=labels)
+
+binned_counts = yearly_data.groupby(['station', 'AQI_Class']).size().unstack(fill_value=0)
+
+plt.figure(figsize=(12, 8))
+binned_counts.plot(kind='bar', stacked=True, colormap='coolwarm')
+plt.title("Distribusi Kualitas Udara Parameter NO2 berdasarkan AQI di Setiap Stasiun {}".format(selected_year))
+plt.xlabel('Stasiun')
+plt.ylabel('Jumlah Data')
+plt.xticks(rotation=45)
+plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=labels)
+plt.grid(axis='y')
+
+st.pyplot(plt)
+
+## Klasifikasi CO
+st.subheader('Klasifikasi CO')
+
+data_kualitas_udara = data_kualitas_udara
+data_co = data_kualitas_udara[['station', 'CO', 'year']].dropna()
+
+bins = [0, 51, 101, 151, 201, 301, 500]
+labels = [
+    'Sangat baik', 
+    'Baik',
+    'Sedikit tercemar',
+    'Cukup tercemar',
+    'Sangat tercemar',
+    'Tercemar parah'
+]
+
+years = data_co['year'].unique()
+selected_year = st.selectbox("Pilih Tahun:", years)
+yearly_data = data_co[data_co['year'] == selected_year]
+yearly_data['AQI_Class'] = pd.cut(yearly_data['CO'], bins=bins, labels=labels)
+
+binned_counts = yearly_data.groupby(['station', 'AQI_Class']).size().unstack(fill_value=0)
+
+plt.figure(figsize=(12, 8))
+binned_counts.plot(kind='bar', stacked=True, colormap='coolwarm')
+plt.title("Distribusi Kualitas Udara Parameter CO berdasarkan AQI di Setiap Stasiun {}".format(selected_year))
+plt.xlabel('Stasiun')
+plt.ylabel('Jumlah Data')
+plt.xticks(rotation=45)
+plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=labels)
+plt.grid(axis='y')
+
+st.pyplot(plt)
+
+## Klasifikasi O3
+st.subheader('Klasifikasi O3')
+
+data_kualitas_udara = data_kualitas_udara
+data_o3 = data_kualitas_udara[['station', 'O3', 'year']].dropna()
+
+bins = [0, 51, 101, 151, 201, 301, 500]
+labels = [
+    'Sangat baik', 
+    'Baik',
+    'Sedikit tercemar',
+    'Cukup tercemar',
+    'Sangat tercemar',
+    'Tercemar parah'
+]
+
+years = data_o3['year'].unique()
+selected_year = st.selectbox("Pilih Tahun:", years)
+yearly_data = data_o3[data_o3['year'] == selected_year]
+yearly_data['AQI_Class'] = pd.cut(yearly_data['O3'], bins=bins, labels=labels)
+
+binned_counts = yearly_data.groupby(['station', 'AQI_Class']).size().unstack(fill_value=0)
+
+plt.figure(figsize=(12, 8))
+binned_counts.plot(kind='bar', stacked=True, colormap='coolwarm')
+plt.title("Distribusi Kualitas Udara Parameter O3 berdasarkan AQI di Setiap Stasiun {}".format(selected_year))
+plt.xlabel('Stasiun')
+plt.ylabel('Jumlah Data')
+plt.xticks(rotation=45)
+plt.legend(title='Kelas AQI', loc='upper left', bbox_to_anchor=(1, 1), labels=labels)
+plt.grid(axis='y')
+
+st.pyplot(plt)
