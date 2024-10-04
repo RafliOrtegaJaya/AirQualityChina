@@ -232,7 +232,7 @@ labels = [
 ]
 
 years = data_pm25['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter PM2.5:", years)
 yearly_data = data_pm25[data_pm25['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['PM2.5'], bins=bins, labels=labels)
 
@@ -266,7 +266,7 @@ labels = [
 ]
 
 years = data_pm10['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter PM10:", years)
 yearly_data = data_pm10[data_pm10['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['PM10'], bins=bins, labels=labels)
 
@@ -300,7 +300,7 @@ labels = [
 ]
 
 years = data_so2['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter SO2:", years)
 yearly_data = data_so2[data_so2['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['SO2'], bins=bins, labels=labels)
 
@@ -334,7 +334,7 @@ labels = [
 ]
 
 years = data_no2['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter NO2:", years)
 yearly_data = data_no2[data_no2['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['NO2'], bins=bins, labels=labels)
 
@@ -368,7 +368,7 @@ labels = [
 ]
 
 years = data_co['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter CO:", years)
 yearly_data = data_co[data_co['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['CO'], bins=bins, labels=labels)
 
@@ -402,7 +402,7 @@ labels = [
 ]
 
 years = data_o3['year'].unique()
-selected_year = st.selectbox("Pilih Tahun:", years)
+selected_year = st.selectbox("Pilih Tahun Parameter O3:", years)
 yearly_data = data_o3[data_o3['year'] == selected_year]
 yearly_data['AQI_Class'] = pd.cut(yearly_data['O3'], bins=bins, labels=labels)
 
